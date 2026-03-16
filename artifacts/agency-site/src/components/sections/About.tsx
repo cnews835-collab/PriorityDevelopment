@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { Quote } from "lucide-react";
 
 export function About() {
   return (
@@ -31,16 +32,39 @@ export function About() {
               Not a Company. <br className="hidden md:block" />
               Just a <span className="text-primary">Side Project.</span>
             </h2>
-            <div className="space-y-6 text-lg text-muted-foreground">
+            <div className="space-y-5 text-lg text-muted-foreground">
               <p>
                 Priority Development is a passion-driven side project built by a small group of developers and creators who love Roblox, Discord, and the web. No corporate fluff — just people who enjoy building cool things together.
               </p>
               <p>
-                We work on Roblox games, Discord bots, community servers, and web tools whenever we get the chance. Everything we make comes from genuine interest, and we're always looking for likeminded people to collaborate with.
+                We work on Roblox games, GFX, modeling, Discord bots, community servers, and web tools whenever we get the chance. Everything we make comes from genuine interest, and we're always looking for likeminded people to collaborate with.
               </p>
             </div>
 
-            <div className="mt-10 pt-10 border-t border-border flex items-center gap-6">
+            {/* Founder Quote */}
+            <motion.div
+              initial={{ opacity: 0, y: 10 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.15 }}
+              className="mt-8 relative bg-white border border-border rounded-2xl p-6 shadow-sm"
+            >
+              <Quote className="absolute top-4 right-5 w-8 h-8 text-primary/10" />
+              <p className="text-foreground font-medium text-base leading-relaxed italic">
+                "Not a company, a side project."
+              </p>
+              <div className="mt-4 flex items-center gap-3">
+                <div className="w-9 h-9 rounded-full bg-primary flex items-center justify-center text-xs font-bold text-white shrink-0">
+                  CK
+                </div>
+                <div>
+                  <p className="text-sm font-bold text-foreground">Cricketnews28</p>
+                  <p className="text-xs text-muted-foreground">Founder, Priority Development</p>
+                </div>
+              </div>
+            </motion.div>
+
+            <div className="mt-8 pt-8 border-t border-border flex items-center gap-6">
               <div className="flex -space-x-4">
                 <div className="w-12 h-12 rounded-full border-2 border-white bg-primary flex items-center justify-center text-xs font-bold text-white shadow-sm">PD</div>
                 <div className="w-12 h-12 rounded-full border-2 border-white bg-blue-400 flex items-center justify-center text-xs font-bold text-white shadow-sm">RB</div>

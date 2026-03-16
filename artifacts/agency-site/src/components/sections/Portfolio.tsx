@@ -6,7 +6,7 @@ const mainTabs = ["All", "Roblox", "Discord", "Web"] as const;
 type MainTab = (typeof mainTabs)[number];
 
 const subTabs: Partial<Record<MainTab, string[]>> = {
-  Roblox: ["All", "GFX", "Maps", "Architecture", "Scripting", "UI Design", "Game Systems"],
+  Roblox: ["All", "GFX", "Modeling", "Maps", "Architecture", "Scripting", "UI Design", "Game Systems"],
   Discord: ["All", "Bots", "Server Setup", "Community"],
   Web: ["All", "Websites", "Dashboards", "Tools"],
 };
@@ -29,6 +29,8 @@ const projects: Project[] = [
   { id: 3,  title: "Ninja Scene GFX", description: "Cinematic Roblox GFX of a ninja character in a lush forest — by @DeveloperTifa.", category: "Roblox", subCategory: "GFX", tag: "GFX", featured: false, image: `${import.meta.env.BASE_URL}images/gfx-3.png` },
   { id: 4,  title: "LOTS Character GFX", description: "Dark anime-style GFX render with cherry blossoms and lightning effects — by @DeveloperTifa.", category: "Roblox", subCategory: "GFX", tag: "GFX", featured: false, image: `${import.meta.env.BASE_URL}images/gfx-4.png` },
   { id: 5,  title: "LOTS Desert Scene", description: "Stylised wide-shot desert GFX with cel-shading and ember particles — by @DeveloperTifa.", category: "Roblox", subCategory: "GFX", tag: "GFX", featured: false, image: `${import.meta.env.BASE_URL}images/gfx-5.png` },
+  // Roblox — Modeling (real work)
+  { id: 100, title: "Lava Sword Model", description: "Roblox 3D modeling showcase — a detailed lava-texture sword with molten rock finish.", category: "Roblox", subCategory: "Modeling", tag: "Modeling", featured: true, image: `${import.meta.env.BASE_URL}images/model-1.png` },
   // Roblox — other
   { id: 6,  title: "Coming Soon", description: "An open-world map build — details dropping soon.", category: "Roblox", subCategory: "Maps", tag: "Maps", featured: false },
   { id: 7,  title: "Coming Soon", description: "Architectural showcase in Roblox Studio.", category: "Roblox", subCategory: "Architecture", tag: "Architecture", featured: false },
@@ -47,6 +49,7 @@ const projects: Project[] = [
 
 const tagColors: Record<string, string> = {
   "GFX":          "bg-pink-100 text-pink-700",
+  "Modeling":     "bg-orange-100 text-orange-700",
   "Maps":         "bg-green-100 text-green-700",
   "Architecture": "bg-amber-100 text-amber-700",
   "Scripting":    "bg-cyan-100 text-cyan-700",
