@@ -6,7 +6,7 @@ const mainTabs = ["All", "Roblox", "Discord", "Web"] as const;
 type MainTab = (typeof mainTabs)[number];
 
 const subTabs: Partial<Record<MainTab, string[]>> = {
-  Roblox: ["All", "Maps", "Architecture", "Scripting", "UI Design", "Game Systems"],
+  Roblox: ["All", "GFX", "Maps", "Architecture", "Scripting", "UI Design", "Game Systems"],
   Discord: ["All", "Bots", "Server Setup", "Community"],
   Web: ["All", "Websites", "Dashboards", "Tools"],
 };
@@ -19,27 +19,34 @@ type Project = {
   subCategory: string;
   tag: string;
   featured: boolean;
+  image?: string;
 };
 
 const projects: Project[] = [
-  // Roblox
-  { id: 1,  title: "Coming Soon", description: "An open-world map build — details dropping soon.", category: "Roblox", subCategory: "Maps", tag: "Maps", featured: true },
-  { id: 2,  title: "Coming Soon", description: "Architectural showcase in Roblox Studio.", category: "Roblox", subCategory: "Architecture", tag: "Architecture", featured: false },
-  { id: 3,  title: "Coming Soon", description: "Custom Luau scripting system — details coming.", category: "Roblox", subCategory: "Scripting", tag: "Scripting", featured: false },
-  { id: 4,  title: "Coming Soon", description: "Roblox UI redesign — details coming.", category: "Roblox", subCategory: "UI Design", tag: "UI Design", featured: false },
-  { id: 5,  title: "Coming Soon", description: "Core game systems — economy, data stores, etc.", category: "Roblox", subCategory: "Game Systems", tag: "Game Systems", featured: false },
-  { id: 6,  title: "Coming Soon", description: "Environment map and terrain work.", category: "Roblox", subCategory: "Maps", tag: "Maps", featured: false },
+  // Roblox — GFX (real work)
+  { id: 1,  title: "Night Scene GFX", description: "Atmospheric nighttime Roblox GFX featuring two characters in a dark forest environment.", category: "Roblox", subCategory: "GFX", tag: "GFX", featured: true,  image: `${import.meta.env.BASE_URL}images/gfx-1.png` },
+  { id: 2,  title: "Spin Wheel UI GFX", description: "Stylised in-game spin wheel graphic with bold typography and vibrant color segments.", category: "Roblox", subCategory: "GFX", tag: "GFX", featured: false, image: `${import.meta.env.BASE_URL}images/gfx-2.png` },
+  { id: 3,  title: "Ninja Scene GFX", description: "Cinematic Roblox GFX of a ninja character in a lush forest — by @DeveloperTifa.", category: "Roblox", subCategory: "GFX", tag: "GFX", featured: false, image: `${import.meta.env.BASE_URL}images/gfx-3.png` },
+  { id: 4,  title: "LOTS Character GFX", description: "Dark anime-style GFX render with cherry blossoms and lightning effects — by @DeveloperTifa.", category: "Roblox", subCategory: "GFX", tag: "GFX", featured: false, image: `${import.meta.env.BASE_URL}images/gfx-4.png` },
+  { id: 5,  title: "LOTS Desert Scene", description: "Stylised wide-shot desert GFX with cel-shading and ember particles — by @DeveloperTifa.", category: "Roblox", subCategory: "GFX", tag: "GFX", featured: false, image: `${import.meta.env.BASE_URL}images/gfx-5.png` },
+  // Roblox — other
+  { id: 6,  title: "Coming Soon", description: "An open-world map build — details dropping soon.", category: "Roblox", subCategory: "Maps", tag: "Maps", featured: false },
+  { id: 7,  title: "Coming Soon", description: "Architectural showcase in Roblox Studio.", category: "Roblox", subCategory: "Architecture", tag: "Architecture", featured: false },
+  { id: 8,  title: "Coming Soon", description: "Custom Luau scripting system — details coming.", category: "Roblox", subCategory: "Scripting", tag: "Scripting", featured: false },
+  { id: 9,  title: "Coming Soon", description: "Roblox UI redesign — details coming.", category: "Roblox", subCategory: "UI Design", tag: "UI Design", featured: false },
+  { id: 10, title: "Coming Soon", description: "Core game systems — economy, data stores, etc.", category: "Roblox", subCategory: "Game Systems", tag: "Game Systems", featured: false },
   // Discord
-  { id: 7,  title: "Coming Soon", description: "Custom Discord bot — details coming.", category: "Discord", subCategory: "Bots", tag: "Bots", featured: true },
-  { id: 8,  title: "Coming Soon", description: "Full Discord server setup from scratch.", category: "Discord", subCategory: "Server Setup", tag: "Server Setup", featured: false },
-  { id: 9,  title: "Coming Soon", description: "Community management & growth — details soon.", category: "Discord", subCategory: "Community", tag: "Community", featured: false },
+  { id: 11, title: "Coming Soon", description: "Custom Discord bot — details coming.", category: "Discord", subCategory: "Bots", tag: "Bots", featured: true },
+  { id: 12, title: "Coming Soon", description: "Full Discord server setup from scratch.", category: "Discord", subCategory: "Server Setup", tag: "Server Setup", featured: false },
+  { id: 13, title: "Coming Soon", description: "Community management & growth — details soon.", category: "Discord", subCategory: "Community", tag: "Community", featured: false },
   // Web
-  { id: 10, title: "Coming Soon", description: "Website project — details coming.", category: "Web", subCategory: "Websites", tag: "Websites", featured: true },
-  { id: 11, title: "Coming Soon", description: "Dashboard or admin tool — details soon.", category: "Web", subCategory: "Dashboards", tag: "Dashboards", featured: false },
-  { id: 12, title: "Coming Soon", description: "Developer tooling or web utility.", category: "Web", subCategory: "Tools", tag: "Tools", featured: false },
+  { id: 14, title: "Coming Soon", description: "Website project — details coming.", category: "Web", subCategory: "Websites", tag: "Websites", featured: true },
+  { id: 15, title: "Coming Soon", description: "Dashboard or admin tool — details soon.", category: "Web", subCategory: "Dashboards", tag: "Dashboards", featured: false },
+  { id: 16, title: "Coming Soon", description: "Developer tooling or web utility.", category: "Web", subCategory: "Tools", tag: "Tools", featured: false },
 ];
 
 const tagColors: Record<string, string> = {
+  "GFX":          "bg-pink-100 text-pink-700",
   "Maps":         "bg-green-100 text-green-700",
   "Architecture": "bg-amber-100 text-amber-700",
   "Scripting":    "bg-cyan-100 text-cyan-700",
@@ -198,30 +205,40 @@ export function Portfolio() {
 
 function ProjectCard({ project, large = false }: { project: Project; large?: boolean }) {
   const tagClass = tagColors[project.tag] ?? "bg-gray-100 text-gray-600";
+  const hasImage = !!project.image;
+
   return (
     <div
       className={`group relative flex flex-col justify-between bg-white border border-border rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-0.5 ${
         large ? "md:flex-row min-h-[240px]" : "min-h-[210px]"
       }`}
     >
-      {/* Visual placeholder */}
+      {/* Image / placeholder area */}
       <div
-        className={`relative bg-gradient-to-br from-slate-100 to-blue-50 flex items-center justify-center ${
-          large ? "md:w-2/5 min-h-[180px]" : "h-32"
-        }`}
+        className={`relative overflow-hidden ${
+          large ? "md:w-2/5 min-h-[200px]" : "h-40"
+        } ${!hasImage ? "bg-gradient-to-br from-slate-100 to-blue-50 flex items-center justify-center" : ""}`}
       >
-        <div className="flex flex-col items-center gap-2 opacity-25 select-none">
-          <div className="w-10 h-10 rounded-xl bg-primary/40" />
-          <div className="w-16 h-1.5 rounded-full bg-primary/30" />
-          <div className="w-10 h-1.5 rounded-full bg-primary/20" />
-        </div>
-        <span className={`absolute top-3 left-3 px-2.5 py-1 rounded-full text-xs font-semibold ${tagClass}`}>
+        {hasImage ? (
+          <img
+            src={project.image}
+            alt={project.title}
+            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+          />
+        ) : (
+          <div className="flex flex-col items-center gap-2 opacity-25 select-none">
+            <div className="w-10 h-10 rounded-xl bg-primary/40" />
+            <div className="w-16 h-1.5 rounded-full bg-primary/30" />
+            <div className="w-10 h-1.5 rounded-full bg-primary/20" />
+          </div>
+        )}
+        <span className={`absolute top-3 left-3 px-2.5 py-1 rounded-full text-xs font-semibold shadow-sm ${tagClass}`}>
           {project.tag}
         </span>
       </div>
 
       {/* Text */}
-      <div className={`flex flex-col justify-between p-6 ${large ? "md:w-3/5" : ""}`}>
+      <div className={`flex flex-col justify-between p-5 ${large ? "md:w-3/5" : ""}`}>
         <div>
           <div className="flex items-start justify-between gap-2 mb-2">
             <h3 className={`font-display font-bold text-foreground ${large ? "text-xl" : "text-base"}`}>
@@ -235,7 +252,7 @@ function ProjectCard({ project, large = false }: { project: Project; large?: boo
         </div>
         <div className="mt-4 pt-4 border-t border-border flex items-center gap-2 text-xs text-muted-foreground">
           <Clock className="w-3 h-3 shrink-0" />
-          <span>{project.category} · {project.subCategory} · Coming Soon</span>
+          <span>{project.category} · {project.subCategory}{!hasImage ? " · Coming Soon" : ""}</span>
         </div>
       </div>
     </div>
