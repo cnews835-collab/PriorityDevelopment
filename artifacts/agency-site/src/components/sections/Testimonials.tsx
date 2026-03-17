@@ -3,19 +3,19 @@ import { Quote } from "lucide-react";
 
 const testimonials = [
   {
-    text: "The Discord bot they built for our server completely transformed how we manage our community. Moderation, leveling, events — all in one. Insane quality for a side project.",
-    author: "xXDarkWolfXx",
-    role: "Server Owner · 8,000 members"
+    text: "We're just getting started — reviews from our community members will appear here soon.",
+    author: "Review Pending",
+    role: "Community Member"
   },
   {
-    text: "They scripted an entire economy system for my Roblox game in a weekend. The code was clean and it just worked. Huge respect to the Priority Dev team.",
-    author: "BuilderBro_Dev",
-    role: "Roblox Game Developer"
+    text: "Collaborator and contributor testimonials will be shared here as the project grows.",
+    author: "Review Pending",
+    role: "Collaborator"
   },
   {
-    text: "Super cool people to work with. They set up our whole Discord from scratch — roles, bots, channel structure. It looked way more professional than we expected.",
-    author: "crunchtime_rb",
-    role: "Community Lead"
+    text: "More testimonials are on the way. If you've worked with us, we'd love to hear from you!",
+    author: "Review Pending",
+    role: "Discord Member"
   }
 ];
 
@@ -33,7 +33,7 @@ export function Testimonials() {
             What People <span className="text-primary">Say</span>
           </h2>
           <p className="text-muted-foreground text-lg">
-            Feedback from communities and devs we've collaborated with along the way.
+            Reviews from collaborators and community members — more coming soon.
           </p>
         </motion.div>
 
@@ -48,14 +48,17 @@ export function Testimonials() {
               className="bg-white p-8 rounded-3xl relative border border-border shadow-sm"
             >
               <Quote className="absolute top-6 right-8 w-12 h-12 text-primary/10" />
-              <div className="flex gap-1 mb-6 text-primary">
+              <div className="flex gap-1 mb-4 text-primary">
                 {[1, 2, 3, 4, 5].map(star => (
                   <svg key={star} className="w-5 h-5 fill-current" viewBox="0 0 24 24">
                     <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
                   </svg>
                 ))}
               </div>
-              <p className="text-lg text-foreground mb-8 relative z-10 leading-relaxed font-medium">
+              <span className="inline-block bg-accent text-primary text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full mb-5">
+                Upcoming
+              </span>
+              <p className="text-base text-muted-foreground mb-8 relative z-10 leading-relaxed italic">
                 "{item.text}"
               </p>
               <div>

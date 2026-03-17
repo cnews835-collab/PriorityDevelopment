@@ -1,10 +1,10 @@
 import { motion } from "framer-motion";
 
 const stats = [
-  { value: "50+", label: "Projects Shipped" },
-  { value: "10k+", label: "Discord Members" },
-  { value: "3+", label: "Years Building" },
-  { value: "100%", label: "Passion-Driven" },
+  { value: "0",    label: "Shipped Projects" },
+  { value: "50",   label: "Members" },
+  { value: "25+",  label: "Combined Years of Professionalism" },
+  { value: "100%", label: "Passion" },
 ];
 
 export function Stats() {
